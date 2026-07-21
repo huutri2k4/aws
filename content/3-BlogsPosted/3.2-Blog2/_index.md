@@ -1,31 +1,83 @@
 ---
 title: "Blog 2"
-date: 2024-01-01
-weight: 1
+date: 2026-07-09
+weight: 2
 chapter: false
 pre: " <b> 3.2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# SESSION POLICIES IN AMAZON EKS POD IDENTITY
+# Automatically Trigger CI/CD for Each Project in a GitHub Monorepo with AWS CodePipeline
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+In the process of learning about **CI/CD on AWS**, I read a quite interesting blog post from AWS about **integrating a GitHub Monorepo with AWS CodePipeline**.
 
-Key points to know:
+### The Problem of Monorepo in CI/CD
+**Monorepo** is a way of organizing source code where **multiple applications or services reside within a single repository**.
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+**Example:**
+repo/
+├── frontend/
+├── backend/
+├── auth-service/
+├── internship-service/
+└── docs/
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
+This approach helps **manage source code centrally**, makes it easy to share common libraries, and simplifies repository management. However, when deploying CI/CD, a problem arises: **If each service has its own AWS CodePipeline, any commit in the repository can trigger all pipelines.**
 
-...Image...
+**Example:**
+* Only modifying `docs/README.md`
+* Only updating `frontend/`
 
-...Link...
+**But:**
+* Frontend Pipeline runs
+* Backend Pipeline runs
+* Auth Service Pipeline runs
 
-...Guide...
+While in reality, **only one specific pipeline needs to be activated**. This increases **build time, consumes resources, and incurs unnecessary costs**.
+
+### The Solution Idea
+After reading the AWS blog post, I realized that the problem does not lie within CodePipeline itself, but in **how events from GitHub are handled**. Instead of letting CodePipeline automatically listen to the entire repository, we can **create an intermediate layer to decide which pipeline should run**.
+
+**General Architecture:**
+Developer ➔ GitHub Monorepo ➔ Webhook ➔ API Gateway ➔ Lambda ➔ Decision Engine ➔ Corresponding CodePipeline
+
+**Lambda will read the payload from the GitHub Webhook** to determine:
+* **Which files were changed**
+* **Which directories are affected**
+* **Whether it is an important file or not**
+
+Only then does it decide whether to trigger the pipeline.
+
+### How It Works
+Suppose the repository has the following structure:
+repo/
+├── frontend/
+├── backend/
+├── internship-service/
+└── docs/
+
+If a commit is made to: `frontend/src/App.jsx`
+➔ **Lambda will analyze the GitHub payload** and recognize that the change is located inside the frontend directory.
+* **Result:** Runs Frontend Pipeline; Does not run Backend Pipeline; Does not run Internship Service Pipeline.
+
+Conversely, if a commit is made to: `docs/README.md`
+➔ The system can **completely ignore it**. No pipeline is activated.
+
+### What I Learned
+
+#### 1. Event-Driven CI/CD is More Efficient Than Polling
+Initially, I thought that having the pipeline just monitor the repository was enough. However, the **Event-Driven approach makes the system much smarter**.
+Instead of: *"Repository changes ➔ Run everything"*
+We shift to: ***"Repository changes ➔ Analyze ➔ Run exactly what needs to run"***
+
+#### 2. Lambda Can Act as a Decision Engine
+Previously, I usually viewed Lambda as a simple processing function. In this model, **Lambda becomes the central orchestrator**. It can: **Analyze commits, Check branches, Ignore non-important files, and Trigger multiple different pipelines**.
+
+#### 3. Saving AWS Costs
+This is especially useful when using: **AWS CodeBuild, AWS CodePipeline, and ECS Deployment**. Each build consumes resources. If the repository contains dozens of microservices, **building only the specific service that changed will save a significant amount of cost**.
+
+### Conclusion
+This is a **simple, cost-effective solution** but highly suitable for Monorepo systems or Microservices architectures on AWS.
+
+![Nguyen Huu Tri](/images/VA.jpg)
+
+**Reference Source:** <https://aws.amazon.com/vi/blogs/devops/integrate-github-monorepo-with-aws-codepipeline-to-run-project-specific-ci-cd-pipelines/>

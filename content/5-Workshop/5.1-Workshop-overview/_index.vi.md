@@ -1,19 +1,27 @@
 ---
-title : "Giới thiệu"
-date : 2024-01-01 
-weight : 1
-chapter : false
-pre : " <b> 5.1. </b> "
+title: "Giới thiệu"
+date: 2026-04-17
+weight: 1
+chapter: false
+pre: " <b> 5.1. </b> "
 ---
 
-#### Giới thiệu về VPC Endpoint
+#### Giới thiệu về S3, RDS và IAM trong Dự án
 
-+ Điểm cuối VPC (endpoint) là thiết bị ảo. Chúng là các thành phần VPC có thể mở rộng theo chiều ngang, dự phòng và có tính sẵn sàng cao. Chúng cho phép giao tiếp giữa tài nguyên điện toán của bạn và dịch vụ AWS mà không gây ra rủi ro về tính sẵn sàng.
-+ Tài nguyên điện toán đang chạy trong VPC có thể truy cập Amazon S3 bằng cách sử dụng điểm cuối Gateway. Interface Endpoint  PrivateLink có thể được sử dụng bởi tài nguyên chạy trong VPC hoặc tại TTDL.
+Trong mô hình ứng dụng web **Hệ thống Quản lý Thực tập sinh**, việc tổ chức lưu trữ dữ liệu và kiểm soát an toàn thông tin là ưu tiên hàng đầu:
 
-#### Tổng quan về workshop
-Trong workshop này, bạn sẽ sử dụng hai VPC.
-+ **"VPC Cloud"** dành cho các tài nguyên cloud như Gateway endpoint và EC2 instance để kiểm tra.
-+ **"VPC On-Prem"** mô phỏng môi trường truyền thống như nhà máy hoặc trung tâm dữ liệu của công ty. Một EC2 Instance chạy phần mềm StrongSwan VPN đã được triển khai trong "VPC On-prem" và được cấu hình tự động để thiết lập đường hầm VPN Site-to-Site với AWS Transit Gateway. VPN này mô phỏng kết nối từ một vị trí tại TTDL (on-prem) với AWS cloud. Để giảm thiểu chi phí, chỉ một phiên bản VPN được cung cấp để hỗ trợ workshop này. Khi lập kế hoạch kết nối VPN cho production workloads của bạn, AWS khuyên bạn nên sử dụng nhiều thiết bị VPN để có tính sẵn sàng cao.
+* **Amazon S3 (Simple Storage Service):** Đóng vai trò là kho lưu trữ đối tượng (Object Storage) mở rộng, dùng để lưu trữ các file tĩnh như ảnh avatar sinh viên, tệp CV dạng PDF và các bản báo cáo thực tập tuần.
+* **Amazon RDS MySQL (Relational Database Service):** Đóng vai trò là cơ sở dữ liệu quan hệ chính, quản lý toàn bộ cấu trúc dữ liệu gồm thông tin tài khoản (Users), danh sách đợt thực tập, chuyên ngành, bảng phân công nhiệm vụ và kết quả đánh giá.
+* **AWS IAM (Identity and Access Management):** Đóng vai trò là lớp bảo mật trung tâm, quy định chính xác ứng dụng backend hoặc người dùng nào được phép truy xuất dữ liệu (`s3:PutObject`, `s3:GetObject`, truy vấn RDS) theo đúng nguyên tắc quyền hạn tối thiểu.
 
-![overview](/images/5-Workshop/5.1-Workshop-overview/diagram1.png)
+#### Tổng quan quy trình thực hành (Workshop)
+
+Bài thực hành tập trung vào việc khởi tạo hạ tầng và kết nối an toàn giữa 3 dịch vụ:
+
+1. **Khởi tạo Amazon S3 Bucket:** Tạo bucket lưu trữ, mở quyền upload file tĩnh và kiểm tra đường dẫn lưu trữ.
+2. **Khởi tạo Amazon RDS MySQL:** Tạo con DB instance chạy MySQL, đưa vào nhóm DB Subnet Group an toàn và mở cổng 3306 trên Security Group.
+3. **Phân quyền với IAM:** Viết file cấu hình JSON IAM Policy, tạo IAM Role để gán quyền cho ứng dụng kết nối trực tiếp đến S3 và RDS một cách an toàn.
+
+> **Lưu ý:** Tất cả cấu hình trong bài workshop này đều tuân thủ các quy tắc bảo mật cơ bản của AWS, giúp loại bỏ việc lưu trữ cứng chìa khóa Access Key trong mã nguồn ứng dụng.
+
+![Nguyen Huu Tri](/images/s3.png)

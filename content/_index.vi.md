@@ -1,40 +1,58 @@
 ---
-title: "Báo cáo thực tập"
-date: 2024-01-01
+title: "Báo cáo Thực tập"
+date: 2026-04-17
 weight: 1
 chapter: false
 ---
 
-# Báo cáo thực tập
-### Thông tin sinh viên:
-&emsp; **Họ và tên:** Nguyễn Văn A
-
-&emsp; **Số điện thoại:** 0989888999
-
-&emsp; **Email:** Anguyenvan@gmail.com
-
-&emsp; **Trường:** Đại học Sư phạm Kỹ thuật TP.HCM
-
-&emsp; **Ngành:** Công nghệ thông tin
-
-&emsp; **Lớp:** AWS082025
-
-&emsp; **Công ty thực tập:** Công ty TNHH Amazon Web Services Viet Nam
-
-&emsp; **Vị trí thực tập:** Workforce Bootcamp - First Cloud AI Journey
-
-&emsp; **Thời gian thực tập:** Từ ngày 12/08/2025 đến ngày 12/11/2025
-
-![Ảnh đại diện của bạn](/images/avatar.png)
+# Báo cáo Thực tập
 
 
 
-### Nội dung báo cáo
+## Thông tin Sinh viên
 
-1.  [Worklog](1-Worklog/)
-2.  [Proposal](2-Proposal/)
-3.  [Các bài blogs đã đăng](3-BlogsPosted/)
-4.  [Các events đã tham gia](4-EventParticipated/)
-5.  [Workshop](5-Workshop/)
-6.  [Tự đánh giá](6-Self-evaluation/)
-7.  [Chia sẻ, đóng góp ý kiến](7-Feedback/)
+&emsp; **Họ và tên:** Nguyễn Hữu Trí
+
+&emsp; **Số điện thoại:** 0368111971
+
+&emsp; **Email:** nguyentri2307@gmail.com
+
+&emsp; **Trường đại học:** Đại học Công nghệ Thành phố Hồ Chí Minh (HUTECH)
+
+&emsp; **Khoa:** Công nghệ Thông tin
+
+&emsp; **Chuyên ngành:** Kỹ thuật Phần mềm
+
+&emsp; **Lớp:** 22DTHE2
+
+&emsp; **Công ty thực tập:** Amazon Web Services Vietnam Co., Ltd.
+
+&emsp; **Chương trình thực tập:** Workforce Bootcamp – First Cloud AI Journey
+
+&emsp; **Người hướng dẫn (Mentor):** Nguyễn Gia Hùng
+
+&emsp; **Email Mentor:** hunggia@amazon.com
+
+&emsp; **Chức vụ Mentor:** Trưởng bộ phận Kiến trúc Giải pháp (Head of Solution Architect)
+
+&emsp; **Thời gian thực tập:** Từ ngày **17/04/2026** đến ngày **10/07/2026**
+
+---
+
+## Hình ảnh cá nhân
+
+![Nguyen Huu Tri](/images/avtcv.jpg)
+
+*Hình 1. Ảnh chân dung sinh viên.*
+
+---
+
+# Nội dung báo cáo
+
+1. **[Nhật ký làm việc](1-worklog/)**
+2. **[Đề xuất](2-proposal/)**
+3. **[Đã đăng](3-blogsposted/)**
+4. **[Các sự kiện đã tham gia](4-eventparticipated/)**
+5. **[Hội thảo](5-workshop/)**
+6. **[Tự đánh giá](6-self-evaluation/)**
+7. **[Chia sẻ và phản hồi](7-feedback/)**

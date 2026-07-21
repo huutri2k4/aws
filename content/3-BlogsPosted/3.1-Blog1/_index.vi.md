@@ -1,31 +1,48 @@
 ---
-title: "Blog 1"
-date: 2024-01-01
+title: "Blog1"
+date: 2026-07-09
 weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-# SESSION POLICIES TRONG AMAZON EKS POD IDENTITY
+# Xây dựng hệ thống xác thực hai lớp (Dual-Token Authentication) cho Nakama Game Server bằng Amazon Cognito trên AWS.
 
-Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+### GIỚI THIỆU
+Trong các trò chơi trực tuyến, hệ thống xác thực không chỉ cần đảm bảo tính bảo mật mà còn phải mang lại trải nghiệm đăng nhập liền mạch. Nakama sử dụng Session Token để quản lý phiên chơi, trong khi Amazon Cognito phát hành JWT (JSON Web Token) để xác thực danh tính người dùng. Nếu hai hệ thống này hoạt động độc lập, người chơi có thể phải xác thực nhiều lần hoặc gặp gián đoạn khi sử dụng.
 
-Các điểm chính cần nắm:
+Giải pháp Dual-Token Authentication kết hợp Amazon Cognito và Nakama để tách biệt việc quản lý danh tính với quản lý phiên chơi. Cognito chịu trách nhiệm xác thực người dùng, còn Nakama tạo và quản lý Session Token thông qua Go Runtime Hook, giúp hệ thống vừa an toàn vừa đảm bảo trải nghiệm mượt mà.
 
-* Session policy là một IAM policy inline được chỉ định khi tạo hoặc cập nhật Pod Identity association.
-* Quyền hiệu quả = intersection (giao) giữa permissions của IAM role và session policy → session policy chỉ có thể thu hẹp, không thể mở rộng quyền.
-* Giúp tránh tình trạng over-permissioning khi reuse chung một IAM role cho nhiều workloads có nhu cầu khác nhau.
-* Hỗ trợ cả same-account và cross-account (qua IAM role chaining).
-* Giảm đáng kể số lượng IAM roles cần quản lý, tránh chạm giới hạn quota IAM trong cluster lớn.
-* Cấu hình dễ dàng qua AWS Management Console, AWS CLI hoặc AWS SDK khi tạo association giữa Kubernetes ServiceAccount và IAM role.
+### Kiến trúc tổng thể
+Kiến trúc sử dụng các dịch vụ chính gồm Amazon Cognito, Amazon CloudFront, Application Load Balancer (ALB), Network Load Balancer (NLB) và Nakama triển khai trên Amazon ECS Fargate.
 
-Tính năng này đặc biệt hữu ích khi bạn có nhiều ứng dụng chạy trên cùng một IAM role nhưng cần giới hạn quyền khác nhau (ví dụ: một pod chỉ đọc S3 bucket cụ thể, pod khác chỉ gọi một số API nhất định).
+Quy trình hoạt động như sau:
+1. Người chơi đăng nhập bằng Amazon Cognito.
+2. Cognito trả về JWT Access Token.
+3. Client gửi JWT đến Nakama thông qua CloudFront.
+4. Go Runtime Hook xác thực JWT và tạo Session Token.
+5. Các yêu cầu tiếp theo sử dụng Session Token của Nakama.
 
-...Hình ảnh...
+Cách tiếp cận này giúp tách biệt hoàn toàn việc xác thực người dùng và quản lý phiên chơi.
 
-...Link...
+### Luồng xác thực
+Đầu tiên, người chơi đăng nhập bằng Amazon Cognito thông qua cơ chế USER_SRP_AUTH, giúp mật khẩu không phải gửi trực tiếp lên máy chủ. Sau khi xác thực thành công, Cognito phát hành JWT chứa các thông tin như sub, iss, exp và client_id.
 
-...Hướng dẫn...
+Khi JWT được gửi đến Nakama, Go Runtime Hook sẽ kiểm tra chữ ký số, thời gian hết hạn, Issuer và Client ID. Nếu token hợp lệ, Nakama sẽ tạo Session Token để người chơi sử dụng trong toàn bộ quá trình chơi game.
+
+### Vai trò của ALB và NLB
+Hệ thống sử dụng đồng thời hai Load Balancer để xử lý các loại lưu lượng khác nhau.
+* **Application Load Balancer (ALB):** Xử lý các HTTP API, chỉ cho phép những đường dẫn đã được cấu hình và từ chối các yêu cầu không hợp lệ bằng mã lỗi 403 Forbidden.
+* **Network Load Balancer (NLB):** Xử lý kết nối WebSocket ở tầng TCP, giúp duy trì kết nối ổn định và giảm độ trễ cho các trò chơi thời gian thực.
+
+### Bảo mật hệ thống
+Amazon CloudFront là điểm truy cập HTTPS duy nhất và kết hợp với AWS WAF để lọc các yêu cầu độc hại trước khi chuyển đến hệ thống.
+
+Bên cạnh đó, Go Runtime Hook chỉ chấp nhận JWT hợp lệ và luôn sử dụng giá trị sub trong token đã xác thực để nhận diện người chơi, giúp ngăn chặn việc giả mạo tài khoản. Các Security Group cũng được cấu hình để chỉ cho phép lưu lượng đi theo đúng tuyến từ CloudFront đến Nakama.
+
+### Kết luận
+Giải pháp Dual-Token Authentication kết hợp giữa Amazon Cognito và Nakama giúp xây dựng một hệ thống xác thực an toàn, linh hoạt và phù hợp cho các game trực tuyến hiện đại. Với sự hỗ trợ của CloudFront, ALB, NLB và Amazon ECS Fargate, hệ thống không chỉ tăng cường bảo mật mà còn đảm bảo khả năng mở rộng, hiệu suất cao và hỗ trợ tốt cho các kết nối WebSocket thời gian thực.
+
+![Nguyen Huu Tri](/images/tri.jpg)
+
+**Nguồn tham khảo:** <https://aws.amazon.com/blogs/architecture/dual-token-authentication-for-nakama-game-servers-with-amazon-cognito-on-aws/>

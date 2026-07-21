@@ -1,59 +1,33 @@
 ---
-title: "Worklog Tuần 3"
-date: 2024-01-01
-weight: 1
+title: "Nhật ký công việc Tuần 3"
+date: 2026-05-04
+weight: 3
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 3:
+* Biết cách cài đặt cảnh báo tiền điện toán đám mây (AWS Budgets) để tránh bị mất tiền oan khi làm lab.
+* Học cách tạo máy chủ ảo Amazon EC2 và tự kết nối từ máy tính cá nhân vào máy chủ đó.
 
-### Mục tiêu tuần 3:
+### Nhiệm vụ thực hiện trong tuần:
+| Ngày | Nhiệm vụ | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
+| 1 | - Tìm hiểu về AWS Budget và AWS Support.<br>- Vọc thử cách tạo cảnh báo chi phí (Cost Budget) mức 80% và 100% để nhận mail khi lỡ xài quá lố. | 04/05/2026 | 04/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 2 | - Đọc lý thuyết về Amazon EC2, xem mấy cái như Instance type (cấu hình CPU/RAM), AMI (hệ điều hành) và Key pair (chìa khóa login). | 05/05/2026 | 05/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 3 | - Tìm hiểu sơ qua về Amazon EBS, biết nó giống như cái ổ cứng gắn ngoài cho máy chủ EC2. | 06/05/2026 | 06/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 4 | - Thực hành bấm tạo một con EC2 instance đầu tiên trên AWS Console.<br>- Tạo và tải file Key pair về máy máy tính. | 07/05/2026 | 07/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 5 | - Tìm hiểu về Security Group, tập cấu hình mở cổng SSH (22) và HTTP (80) để cho phép kết nối vào máy chủ. | 08/05/2026 | 08/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 6 | - Mở terminal trên máy máy tính, gõ lệnh SSH để login vào con EC2 vừa tạo.<br>- Test thử các nút Start, Stop và Reboot máy chủ. | 09/05/2026 | 09/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Kết quả đạt được trong Tuần 3:
+* Cài xong cái AWS Budgets nên yên tâm làm lab không lo bị tính tiền lố mà không biết.
+* Biết cách tạo một con máy chủ EC2 hoàn chỉnh từ chọn hệ điều hành, cấu hình cho đến dung lượng ổ cứng (EBS).
+* Hiểu cách hoạt động của Security Group để đóng/mở cổng mạng.
+* Biết dùng Terminal để SSH vào quản lý máy chủ từ xa và biết cách tắt máy (Stop) khi không dùng để tiết kiệm tiền.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+![Nguyen Huu Tri](/images/tuan3,1.png)
 
+![Nguyen Huu Tri](/images/tuan3,2.png)
 
-### Kết quả đạt được tuần 3:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+![Nguyen Huu Tri](/images/tuan3,3.png)

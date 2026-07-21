@@ -1,59 +1,31 @@
 ---
-title: "Worklog Tuần 4"
-date: 2024-01-01
-weight: 1
+title: "Nhật ký công việc Tuần 4"
+date: 2026-05-11
+weight: 4
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 4:
+* Tập cấu hình các tính năng nâng cao cho EC2 (xin IP tĩnh Elastic IP, tạo thêm ổ cứng gắn ngoài EBS volume) và làm báo cáo tổng kết chặng 1 (4 tuần đầu).
+* Tìm hiểu lý thuyết cơ bản về mạng ảo độc lập Amazon VPC và hai lớp tường lửa Security Group, NACL.
 
-### Mục tiêu tuần 4:
+### Nhiệm vụ thực hiện trong tuần:
+| Ngày | Nhiệm vụ | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
+| 1 | - Thực hành tạo thêm máy chủ EC2 phụ để test.<br>- Xin cấp phát và gán thử IP tĩnh (Elastic IP) cho máy chủ để không bị đổi IP mỗi khi restart máy. | 11/05/2026 | 11/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 2 | - Thực hành tạo một ổ cứng gắn ngoài độc lập Amazon EBS volume (loại gp3, dung lượng 2 GiB).<br>- Gắn (Attach) ổ cứng này vào EC2 và gõ lệnh trên Linux để chia phân vùng, mount ổ đĩa. | 12/05/2026 | 12/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 3 | - Bật/tắt và dùng thử lệnh AWS CLI để kiểm tra danh sách tài nguyên đã tạo.<br>- Tổng hợp lại những gì đã học từ tuần 1 đến tuần 4 để hoàn thiện bài báo cáo tiến độ chặng đầu. | 13/05/2026 | 13/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 4 | - **Học lý thuyết mạng:** Đọc tài liệu xem Amazon VPC (mạng ảo riêng) là gì.<br>- Tìm hiểu sơ qua cách chia dải IP (khối CIDR từ /16 đến /28) để thiết kế mạng không bị trùng với mạng ở nhà/công ty. | 14/05/2026 | 14/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 5 | - **Tìm hiểu bảo mật:** Học về Nhóm bảo mật (Security Group) - đây là tường lửa lớp ngoài bảo vệ ngay tại chỗ cho từng con máy chủ EC2 (Stateful - tự động nhớ luồng ra vào). | 15/05/2026 | 15/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 6 | - Học tiếp về Network ACL (NACL) - tường lửa lớp trong bảo vệ cho cả một vùng mạng Subnet (Stateless - phải tự cấu hình chặn/mở cả 2 chiều ra và vào). | 16/05/2026 | 16/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Kết quả đạt được trong Tuần 4:
+* Thực hành xin cấp và gán thành công địa chỉ IP tĩnh (Elastic IP) cho EC2, giúp máy chủ có IP cố định không bị thay đổi ngẫu nhiên.
+* Biết cách tạo thêm một ổ cứng gắn ngoài EBS (loại gp3, dung lượng 2 GiB), kết nối vào máy chủ Linux và tự gõ lệnh phân vùng, mount ổ đĩa thành công trên Terminal.
+* Gom đủ dữ liệu, hình ảnh thực hành để hoàn thành và nộp báo cáo tổng kết tiến độ 4 tuần đầu tiên.
+* Hiểu được bản chất mạng ảo Amazon VPC, phân biệt được cách hoạt động và sự phối hợp giữa hai lớp tường lửa Security Group (bảo vệ máy chủ) và NACL (bảo vệ mạng con Subnet).
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+![Nguyen Huu Tri](/images/tuan4,1.png)
 
-
-### Kết quả đạt được tuần 4:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+![Nguyen Huu Tri](/images/tuan4,2.png)

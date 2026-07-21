@@ -1,58 +1,29 @@
 ---
-title: "Worklog Tuần 6"
-date: 2024-01-01
-weight: 1
+title: "Nhật ký công việc Tuần 6"
+date: 2026-05-25
+weight: 6
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 6:
+* Làm quen với môi trường code code trên đám mây AWS Cloud9 và học cách dùng các tính năng cơ bản của Amazon S3 (quản lý phiên bản, up trang web tĩnh).
+* Tìm hiểu sơ qua về dịch vụ tăng tốc tải trang AWS CloudFront và các cách tính tiền khi thuê máy chủ EC2.
 
-### Mục tiêu tuần 6:
+### Nhiệm vụ thực hiện trong tuần:
+| Ngày | Nhiệm vụ | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
+| 1 | - Tìm hiểu về AWS Cloud9, tập bấm tạo một môi trường Cloud9 và làm quen với giao diện gõ code IDE trên trình duyệt web. | 25/05/2026 | 25/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 2 | - Mở terminal trên Cloud9, gõ thử vài lệnh AWS CLI để xem danh sách tài nguyên.<br>- Đọc lý thuyết cơ bản về lưu trữ đối tượng với Amazon S3. | 26/05/2026 | 26/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 3 | - Tập tạo một S3 Bucket mới, mở quyền truy cập công khai (Public Access) và cấu hình tính năng Static Website Hosting để chuẩn bị chạy web. | 27/05/2026 | 27/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 4 | - Up thử file code giao diện web tĩnh (HTML/CSS) lên S3 rồi lấy link endpoint chạy thử.<br>- Tìm hiểu sơ lược về AWS CloudFront (mạng phân phối nội dung CDN). | 28/05/2026 | 28/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 5 | - Thực hành bật tính năng quản lý phiên bản (Bucket Versioning) cho bucket `bucket-tuan6-tri` để lưu lại các bản cũ khi sửa file, tránh bị đè dữ liệu. | 29/05/2026 | 29/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 6 | - Tìm hiểu các gói tính tiền của máy chủ EC2 như On-Demand (xài nhiêu trả nhiêu), Reserved (thuê dài hạn để giảm giá) và Spot Instances (dùng máy dư với giá rẻ).<br>- Tiến hành dọn dẹp và xóa các tài nguyên lab để không bị tính phí. | 30/05/2026 | 30/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Kết quả đạt được trong Tuần 6:
+* Biết cách mở giao diện lập trình Cloud9 và chạy các lệnh AWS CLI cơ bản ngay trên cloud.
+* Cấu hình thành công tính năng **Bucket Versioning (Enabled)** cho S3 bucket cá nhân giúp bảo vệ file, không sợ bị xóa nhầm dữ liệu.
+* Biết cách biến một S3 bucket thành nơi lưu trữ và chạy một trang web tĩnh cơ bản.
+* Phân biệt được các hình thức mua máy chủ EC2 (On-Demand, Reserved, Spot) tùy theo nhu cầu và ngân sách của dự án.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Kết quả đạt được tuần 6:
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+![Nguyen Huu Tri](/images/tuan6,1.png)

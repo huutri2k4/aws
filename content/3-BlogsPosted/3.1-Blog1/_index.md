@@ -1,31 +1,51 @@
 ---
-title: "Blog 1"
-date: 2024-01-01
+title: "Blog1"
+date: 2026-07-09
 weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# SESSION POLICIES IN AMAZON EKS POD IDENTITY
+# Building a Dual-Token Authentication System for Nakama Game Server Using Amazon Cognito on AWS.
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+### INTRODUCTION
+In online gaming, authentication systems must not only guarantee robust security but also deliver a seamless login experience. Nakama utilizes Session Tokens to manage gameplay sessions, while Amazon Cognito issues JWTs (JSON Web Tokens) to verify user identity. If these two platforms operate independently, players might have to authenticate multiple times or encounter workflow disruptions during gameplay.
 
-Key points to know:
+The Dual-Token Authentication solution integrates Amazon Cognito and Nakama to fully decouple identity management from gameplay session control. Cognito is responsible for user authentication, whereas Nakama generates and oversees Session Tokens via a Go Runtime Hook, maintaining system security while ensuring a smooth user experience.
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+### Macro Architecture
+The infrastructure layout utilizes core services including Amazon Cognito, Amazon CloudFront, an Application Load Balancer (ALB), a Network Load Balancer (NLB), and Nakama containers deployed on Amazon ECS Fargate.
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
+The operational workflow behaves as follows:
+1. The player authenticates using Amazon Cognito.
+2. Cognito returns a verified JWT Access Token.
+3. The game client forwards the JWT to Nakama via Amazon CloudFront.
+4. The Go Runtime Hook validates the JWT payloads and issues a Nakama Session Token.
+5. All downstream system requests utilize this Nakama Session Token.
 
-...Image...
+This architectural blueprint successfully decouples user identity tracking from persistent active gameplay session states.
 
-...Link...
+### Authentication Workflow
+First, the player logs in with Amazon Cognito via the `USER_SRP_AUTH` protocol, which ensures that passwords are never transmitted directly over the network to the server. Upon successful authentication, Cognito issues a signed JWT containing vital claim parameters such as `sub`, `iss`, `exp`, and `client_id`.
 
-...Guide...
+Once the JWT hits the Nakama server, the Go Runtime Hook audits the cryptographic digital signature, expiration timestamps, Issuer domain, and matching Client IDs. If the incoming token is valid, Nakama initializes a native Session Token for the player to utilize throughout their entire gaming session.
+
+### The Role of ALB and NLB
+The architecture simultaneously deploys two distinct Load Balancer types to handle diverse networking traffic profiles:
+* **Application Load Balancer (ALB):** Manages inbound HTTP APIs, strictly permitting predefined routing paths while automatically deflecting invalid or unauthorized attempts with a standard `403 Forbidden` status code.
+* **Network Load Balancer (NLB):** Governs stateful WebSocket data pipes at Layer 4 (TCP layer), preserving network packet stability and ensuring ultra-low latency metrics necessary for real-time competitive gaming execution.
+
+### Perimeter Security Controls
+Amazon CloudFront serves as the absolute singular HTTPS public ingress gateway, integrating with **AWS WAF** to inspect, filter, and drop malicious payloads before they ever reach downstream backend server infrastructure.
+
+Additionally, the embedded Go Runtime Hook rejects unverified tokens and strictly references the verified `sub` (Subject) value inside the payload to map player profiles, completely mitigating identity spoofing vectors. Stateful **Security Groups** are narrow-mapped to mandate that network traffic strictly flows along the verified line-of-rate route extending from CloudFront down into Nakama target tasks.
+
+### Conclusion
+The integrated Dual-Token Authentication solution seamlessly combining Amazon Cognito and Nakama delivers a highly secure, adaptive, and scalable framework tailored for contemporary online multiplayer architectures. Backed by CloudFront, ALB, NLB, and serverless Amazon ECS Fargate tasks, the environment scales up security posture while offering elastic throughput performance capable of driving real-time persistent WebSocket configurations.
+
+...
+offering elastic throughput performance capable of driving real-time persistent WebSocket configurations.
+
+![Nguyen Huu Tri](/images/tri.jpg)
+
+**Reference Source:** <https://aws.amazon.com/blogs/architecture/dual-token-authentication-for-nakama-game-servers-with-amazon-cognito-on-aws/>

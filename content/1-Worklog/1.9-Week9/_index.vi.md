@@ -1,59 +1,29 @@
 ---
-title: "Worklog Tuần 9"
-date: 2024-01-01
-weight: 1
+title: "Nhật ký công việc Tuần 9"
+date: 2026-06-15
+weight: 9
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 9:
+* Thực hành tạo Auto Scaling Group và test tính năng tự động sửa lỗi (Self-healing) của máy chủ trên AWS.
+* Khởi động dự án nhóm "Hệ thống quản lý thực tập sinh": Chốt chức năng, chia việc cho 4 thành viên và thiết kế giao diện trên Figma.
 
-### Mục tiêu tuần 9:
+### Nhiệm vụ thực hiện trong tuần:
+| Ngày | Nhiệm vụ | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
+| 1 | - **Thực hành ASG:** Bấm tạo một Auto Scaling Group tên là `asg-tuan9` sử dụng Launch template mẫu đã chuẩn bị từ trước. | 15/06/2026 | 15/06/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 2 | - **Test Self-healing:** Thử xóa (Terminate) một máy chủ EC2 đang chạy để xem ASG có tự động bật lại con máy chủ mới thế vào như lý thuyết hay không. | 16/06/2026 | 16/06/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 3 | - **Họp nhóm chốt đề tài:** Nhóm 4 người họp bàn về các chức năng cần có cho dự án "Hệ thống quản lý thực tập sinh" và vẽ sơ đồ luồng dữ liệu cơ bản. | 17/06/2026 | 17/06/2026 | Tài liệu nội bộ nhóm |
+| 4 | - **Chia việc trong nhóm:** Thống nhất chia module cho từng thành viên chịu trách nhiệm để làm song song (gồm quản lý user, quản lý tiến độ, báo cáo). Bàn về tông màu chủ đạo cho web. | 18/06/2026 | 18/06/2026 | Tài liệu nội bộ nhóm |
+| 5 | - **Thiết kế UI/UX:** Cả nhóm cùng lên Figma vẽ Wireframe (khung xương) và thiết kế giao diện chi tiết cho các màn hình chính của hệ thống. | 19/06/2026 | 19/06/2026 | Công cụ Figma / Wireframe |
+| 6 | - **Setup project:** Tạo cấu hình thư mục code ban đầu, thống nhất quy tắc đặt tên biến và cách xài Git/GitHub chung để không bị xung đột code khi làm việc nhóm. | 20/06/2026 | 20/06/2026 | Repository dự án |
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Kết quả đạt được trong Tuần 9:
+* Khởi tạo thành công **Auto Scaling group (`asg-tuan9`)** kết nối với template có sẵn và cấu hình các thông số Min/Max/Desired đều bằng 1.
+* Test thử tính năng **Self-healing** chạy mượt mà, hệ thống tự động phát hiện máy chủ die và tự động tạo con khác thay thế.
+* Chốt xong yêu cầu và phân công công việc rõ ràng cho 4 thành viên trong nhóm đối với dự án "Hệ thống quản lý thực tập sinh".
+* Thiết kế xong bộ giao diện UI/UX trên Figma và setup sẵn kho chứa mã nguồn (Repository) để tuần sau bắt đầu nhảy vào code.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Kết quả đạt được tuần 9:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+![Nguyen Huu Tri](/images/tuan9,1.png)

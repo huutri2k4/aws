@@ -1,47 +1,41 @@
 ---
 title: "Sharing and Feedback"
-date: 2024-01-01
+date: 2026-07-10
 weight: 7
 chapter: false
 pre: " <b> 7. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-> Here, you can freely share your personal opinions about your experience participating in the First Cloud AI Journey program. This will help the FCAJ team improve any shortcomings based on the following aspects:
 
-### Overall Evaluation
+### General Evaluation
 
-**1. Working Environment**  
-The working environment is very friendly and open. FCAJ members are always willing to help whenever I encounter difficulties, even outside working hours. The workspace is tidy and comfortable, helping me focus better. However, I think it would be nice to have more social gatherings or team bonding activities to strengthen relationships.
+**1. Working & Learning Environment** The learning and development environment at FCAJ is exceptionally dynamic, open, and heavily driven by a hands-on tech-first spirit. The enthusiastic support from the organizing team and the community created an ideal networking space for a Software Engineering student like me. The communication channels were scientifically structured. However, if the program could incorporate a few online open-talk sessions or mini-bonding games between different project teams, the collaborative spirit would be even more impactful.
 
-**2. Support from Mentor / Team Admin**  
-The mentor provides very detailed guidance, explains clearly when I don’t understand, and always encourages me to ask questions. The admin team supports administrative tasks, provides necessary documents, and creates favorable conditions for me to work effectively. I especially appreciate that the mentor allows me to try and solve problems myself instead of just giving the answer.
+**2. Support from Mentors and the Organizing Team (Admin Team)** I highly appreciate the dedicated guidance from my Mentor. Instead of just handing out ready-made answers for complex AWS Labs or hidden infrastructure deployment blocks, the Mentor always encouraged reverse thinking, guided us to analyze error logs, and empowered us to troubleshoot autonomously. The Admin team was also extremely professional in allocating practicing credits and monitoring milestones, ensuring our group stayed well-aligned with our short-term Sprint goals.
 
-**3. Relevance of Work to Academic Major**  
-The tasks I was assigned align well with the knowledge I learned at university, while also introducing me to new areas I had never encountered before. This allowed me to both strengthen my foundational knowledge and gain practical skills.
+**3. Alignment Between Work and Academic Major** The program perfectly aligns with and robustly complements the Software Engineering curriculum I am pursuing at HUTECH University. Building architectures from VPC and EC2 to RDS not only materialized abstract classroom networking and database theories into reality, but it also expanded my horizons into modern architecture design patterns like the RESTful Service Layer and advanced source code management through GitLab Git Flow.
 
-**4. Learning & Skill Development Opportunities**  
-During the internship, I learned many new skills such as using project management tools, teamwork skills, and professional communication in a corporate environment. The mentor also shared valuable real-world experiences that helped me better plan my career path.
+**4. Opportunities for Learning & Skill Development** Throughout the 12-week journey, I experienced a significant leap in both hard and soft skills. I mastered designing high-value prompts using optimized context layers, grasped cloud cost-optimization infrastructure paradigms (FinOps), and became proficient in decomposing WBS tasks within an agile Sprint framework. Being able to absorb practical corporate case studies from top industry specialists (from VIB, VPBank, GoTymeX, and Cloud Kinetics) offered priceless lessons that textbooks simply cannot replicate.
 
-**5. Company Culture & Team Spirit**  
-The company culture is very positive: everyone respects each other, works seriously but still keeps things enjoyable. When there are urgent projects, everyone works together and supports one another regardless of their position. This made me feel like a real part of the team, even as an intern.
+**5. Culture & Teamwork Spirit** The organizational culture at FCAJ is rooted in mutual respect, operational transparency, and putting team productivity first. During the final deployment sprint of our group project, the "Intern Management System", our team spirit truly shone as everyone worked tirelessly day and night to cross-review source code and resolve complex merge conflicts on Git. The program makes every individual feel like a crucial component contributing to the ultimate collective success.
 
-**6. Internship Policies / Benefits**  
-The company provides an internship allowance and offers flexible working hours when needed. In addition, having the opportunity to join internal training sessions is a big plus.
+**6. Policies & Support Benefits** The organizing committee provided tremendous support by allocating dedicated practicing sandboxes (Free Tier and cloud credits), allowing us to freely experiment with infrastructure configurations. Furthermore, the flexibility regarding our university schedules and the exclusive privilege to join internal deep-dive training sessions on enterprise Generative AI are exceptional advantages for any student developer.
 
 ---
 
-### Additional Questions
-- What did you find **most satisfying** during your internship?  
-- What do you think the company **should improve** for future interns?  
-- If recommending to a friend, would you **suggest they intern here**? Why or why not?  
+### Additional Reflection Questions
+
+* **What were you most satisfied with during your time in the program?** It is definitely the practical mindset towards technology adoption. I did not just learn how to "use" AI or Cloud services; I learned the architectural design thinking used behind large-scale enterprise infrastructures. Successfully launching a resilient architecture and optimizing prompt layouts has given me immense professional confidence.
+
+* **What do you think the program could improve for future cohorts?** The organizing team could compile a centralized knowledge base or a quick-reference Troubleshooting Cheatsheet for common AWS configuration hurdles that students frequently face during the initial weeks. This would help streamline the early-stage onboarding friction for newcomers.
+
+* **If recommending this to your peers, would you advise them to join this program? Why?** Absolutely yes. This is the ultimate launchpad for any Information Technology or Software Engineering student seeking to bridge the gap between abstract academic theories and corporate realities. The program not only teaches hard engineering skills but also refines your workplace conduct up to industry standards.
 
 ---
 
 ### Suggestions & Expectations
-- Do you have any suggestions to improve the internship experience?  
-- Would you like to continue this program in the future?  
-- Any other comments (free sharing):
+
+* **Suggestions for Experience Enrichment:** Increase the duration or frequency of live technical Q&A check-ins with Mentors right after major project milestones, giving development teams more room to optimize their codebase layers.
+* **Future Aspirations:** I am highly motivated to continue participating in the upcoming advanced phases of the program, or engage with the community as a helper/sub-mentor to share my accumulated experience with the next cohort.
+* **Other Comments:** I would like to express my sincere gratitude to the FCAJ organizing committee and the Mentors for their immense dedication to building such a well-structured, high-quality, and deeply inspiring program for Software Engineering students.

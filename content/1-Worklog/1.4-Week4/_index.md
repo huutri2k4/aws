@@ -1,57 +1,31 @@
 ---
-title: "Week 4 Worklog"
-date: 2024-01-01
-weight: 1
+title: "Weekly WorkLog - Week 4"
+date: 2026-05-11
+weight: 4
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 4 Objectives:
+* Practice configuring advanced EC2 features (allocating Elastic IPs, creating external EBS volumes) and complete the first 4-week progress report.
+* Learn the basics of Amazon VPC (Virtual Private Cloud) and how the two firewall layers, Security Groups and NACLs, work.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
-
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
+### Weekly Tasks:
+| Day | Task | Start Date | End Date | References |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 1 | - Launched additional secondary EC2 instances for testing.<br>- Allocated and associated an Elastic IP to an EC2 instance to keep its IP static after restarts. | 11/05/2026 | 11/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 2 | - Created an independent Amazon EBS volume (gp3 type, 2 GiB size).<br>- Attached this volume to an EC2 instance and ran Linux commands to partition and mount it. | 12/05/2026 | 12/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 3 | - Managed instances lifecycle and used basic AWS CLI commands to verify created resources.<br>- Summarized everything learned from Week 1 to Week 4 to complete the phase 1 progress report. | 13/05/2026 | 13/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 4 | - **Network Theory:** Read documentation about Amazon VPC (isolated virtual network).<br>- Learned about IP allocation (CIDR blocks from /16 to /28) to design a network that avoids overlap with home/office IPs. | 14/05/2026 | 14/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 5 | - **Security Theory:** Learned about Security Groups - a firewall layer acting directly at the instance level (Stateful - automatically tracks inbound/outbound return traffic). | 15/05/2026 | 15/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 6 | - Explored Network ACLs (NACLs) - a second firewall layer protecting the entire Subnet (Stateless - requires manual rules for both inbound and outbound traffic). | 16/05/2026 | 16/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
 
+### Week 4 Outcomes:
+* Successfully allocated and associated an Elastic IP to an EC2 instance, securing a static public IP that won't change on reboot.
+* Learned how to create an external EBS volume (gp3, 2 GiB), attach it to a Linux server, and use terminal commands to partition and mount it.
+* Gathered screenshots and logs to complete and submit the first 4-week progress report.
+* Got a solid grasp of Amazon VPC and understood how Security Groups (instance firewall) and NACLs (subnet firewall) work together.
 
-### Week 4 Achievements:
+![Nguyen Huu Tri](/images/tuan4,1.png)
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+![Nguyen Huu Tri](/images/tuan4,2.png)

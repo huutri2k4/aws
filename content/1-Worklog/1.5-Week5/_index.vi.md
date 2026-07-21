@@ -1,59 +1,31 @@
 ---
-title: "Worklog Tuần 5"
-date: 2024-01-01
-weight: 1
+title: "Nhật ký công việc Tuần 5"
+date: 2026-05-18
+weight: 5
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 5:
+* Tìm hiểu cơ bản về dịch vụ quản lý phân quyền AWS IAM và tập viết mã Policy bằng JSON để cấp quyền cho ứng dụng.
+* Xem tiếp lý thuyết về mạng VPC, phân biệt sơ bộ giữa Public Subnet (mạng công cộng) và Private Subnet (mạng nội bộ).
 
-### Mục tiêu tuần 5:
+### Nhiệm vụ thực hiện trong tuần:
+| Ngày | Nhiệm vụ | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
+| 1 | - **Học lý thuyết IAM:** Xem qua các khái niệm cơ bản gồm IAM User (tài khoản), Group (nhóm công việc), Role (vai trò) và Policy (luật phân quyền). | 18/05/2026 | 18/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 2 | - **Học lý thuyết VPC:** Tìm hiểu xem Route Table (bảng đường đi), Internet Gateway (đầu nối mạng ra ngoài) và NAT Gateway (cửa ngõ cho máy nội bộ ra mạng) hoạt động thế nào. | 19/05/2026 | 19/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 3 | - **Thực hành tạo tài khoản:** Tập tạo thử một IAM User mới rồi đưa vào IAM Group để quản lý quyền tập trung cho dễ. | 20/05/2026 | 20/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 4 | - **Tập viết Policy:** Mở trình chỉnh sửa JSON, tự viết một đoạn code mã hóa quyền truy cập S3 cơ bản (chỉ cho phép xem danh sách và đọc dữ liệu). | 21/05/2026 | 21/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 5 | - **Thực hành tạo Role:** Tiến hành bấm tạo một IAM Role mới tên là `EC2-S3-ReadOnly-Role` dành riêng cho dịch vụ EC2 để giúp máy chủ tự kết nối với S3 an toàn mà không cần lưu khóa Access Key. | 22/05/2026 | 22/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 6 | - **Dọn dẹp hệ thống:** Kiểm tra và xóa bớt các tài nguyên lab không dùng tới (như EC2 test, User và các role dư thừa) để tránh bị trừ tiền oan. | 23/05/2026 | 23/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Kết quả đạt được trong Tuần 5:
+* Biết cách tự viết một đoạn mã JSON Policy hoàn chỉnh trong bảng Policy Editor để cấp đúng các quyền mong muốn (`ListAllMyBuckets`, `GetBucketLocation`, `GetObject`).
+* Tạo thành công con `EC2-S3-ReadOnly-Role` để gán thẳng vào máy chủ EC2 giúp bảo mật hệ thống tốt hơn.
+* Phân biệt được khi nào dùng Public Subnet để chạy Web và khi nào dùng Private Subnet để giấu Database, biết cách cấu hình Route Table cơ bản điều hướng luồng mạng.
+* Hoàn thành dọn dẹp các tài nguyên sau khi làm lab xong để tài khoản luôn gọn gàng, an toàn.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+![Nguyen Huu Tri](/images/tuan5,1.png)
 
-
-### Kết quả đạt được tuần 5:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+![Nguyen Huu Tri](/images/tuan5,2.png)

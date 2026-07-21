@@ -1,39 +1,40 @@
 ---
-title: "Self-Assessment"
-date: 2024-01-01
+title: "Self-Evaluation"
+date: 2026-07-10
 weight: 6
 chapter: false
 pre: " <b> 6. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
-{{% /notice %}}
 
-During my internship at **[Company/Organization Name]** from **[start date]** to **[end date]**, I had the opportunity to learn, practice, and apply the knowledge acquired in school to a real-world working environment.  
-I participated in **[briefly describe the main project or task]**, through which I improved my skills in **[list skills: programming, analysis, reporting, communication, etc.]**.  
 
-In terms of work ethic, I always strived to complete tasks well, complied with workplace regulations, and actively engaged with colleagues to improve work efficiency.
+During my internship from **April 17, 2026** to **July 10, 2026** at **Amazon Web Services Vietnam Co., Ltd. (AWS Vietnam)** under the direct guidance of my Mentor, **Nguyen Gia Hung (Head of Solution Architect)**, I had an invaluable opportunity to learn, practice, and translate the Software Engineering knowledge acquired at HUTECH University into a real-world enterprise environment.
 
-To objectively reflect on my internship period, I would like to evaluate myself based on the following criteria:
+I actively engaged in deep-diving into advanced cloud infrastructure laboratory exercises and collaborated within a group project to develop the **"Intern Management System"**. Through this project, I enhanced my technical capabilities in cloud architecture design on AWS (VPC, EC2, RDS, Auto Scaling, CloudWatch), structured frontend development mapping to asynchronous RESTful Service Layers, and professional team collaboration utilizing GitLab Git Flow. In terms of work ethic and professionalism, I consistently strived to execute my assigned tasks on time, conformed to strict information security principles, and proactively communicated to accelerate the team's delivery pipeline.
 
-| No. | Criteria                            | Description                                                                                      | Good | Fair | Average |
+To objectively reflect on my 12-week internship journey, I evaluate my performance based on the following professional criteria:
+
+| No. | Evaluation Criteria | Detailed Description | Good | Fair | Average |
 | --- | ----------------------------------- | ------------------------------------------------------------------------------------------------ | ---- | ---- | ------- |
-| 1   | **Professional knowledge & skills** | Understanding of the field, applying knowledge in practice, proficiency with tools, work quality | ✅    | ☐    | ☐       |
-| 2   | **Ability to learn**                | Ability to absorb new knowledge and learn quickly                                                | ☐    | ✅    | ☐       |
-| 3   | **Proactiveness**                   | Taking initiative, seeking out tasks without waiting for instructions                            | ✅    | ☐    | ☐       |
-| 4   | **Sense of responsibility**         | Completing tasks on time and ensuring quality                                                    | ✅    | ☐    | ☐       |
-| 5   | **Discipline**                      | Adhering to schedules, rules, and work processes                                                 | ☐    | ☐    | ✅       |
-| 6   | **Progressive mindset**             | Willingness to receive feedback and improve oneself                                              | ☐    | ✅    | ☐       |
-| 7   | **Communication**                   | Presenting ideas and reporting work clearly                                                      | ☐    | ✅    | ☐       |
-| 8   | **Teamwork**                        | Working effectively with colleagues and participating in teams                                   | ✅    | ☐    | ☐       |
-| 9   | **Professional conduct**            | Respecting colleagues, partners, and the work environment                                        | ✅    | ☐    | ☐       |
-| 10  | **Problem-solving skills**          | Identifying problems, proposing solutions, and showing creativity                                | ☐    | ✅    | ☐       |
-| 11  | **Contribution to project/team**    | Work effectiveness, innovative ideas, recognition from the team                                  | ✅    | ☐    | ☐       |
-| 12  | **Overall**                         | General evaluation of the entire internship period                                               | ✅    | ☐    | ☐       |
+| 1   | **Professional knowledge & skills** | Understanding cloud architecture, applying knowledge in system design, mastering GitLab, and deliverable quality. | ☐    | ✅    | ☐       |
+| 2   | **Ability to learn**                | Absorbing advanced edge computing mechanisms, token non-determinism, and generative AI frameworks. | ☐    | ✅    | ☐       |
+| 3   | **Proactiveness**                  | Taking initiative in troubleshooting, optimizing prompt context layers, and driving feature integration. | ✅    | ☐    | ☐       |
+| 4   | **Sense of responsibility**         | Completing architectural components on time according to Sprint commitments and quality benchmarks. | ✅    | ☐    | ☐       |
+| 5   | **Discipline**                      | Adhering to Free Tier security guidelines, cleaning up resources to avoid unnecessary cloud bills. | ✅    | ☐    | ☐       |
+| 6   | **Progressive mindset**             | Actively receiving feedback from the Mentor to refactor source code and improve design patterns. | ☐    | ✅    | ☐       |
+| 7   | **Communication**                   | Curating clean weekly worklogs and presenting technical ideas clearly in both English and Vietnamese. | ✅    | ☐    | ☐       |
+| 8   | **Teamwork**                        | Coordinating efficiently in team projects, resolving merge conflicts on Git Flow, and supporting peers. | ✅    | ☐    | ☐       |
+| 9   | **Professional conduct**            | Respecting corporate culture, writing clean unaccented code comments to avoid font encoding errors. | ✅    | ☐    | ☐       |
+| 10  | **Problem-solving skills**          | Identifying hidden Auto Scaling bottlenecks and proposing convincing alternatives during Figma sprints. | ☐    | ✅    | ☐       |
+| 11  | **Contribution to project/team**    | Architecting foundational frontend blocks connected to asynchronous APIs for the Intern Management System. | ☐    | ✅    | ☐       |
+| 12  | **Overall**                         | A holistic self-assessment of personal engineering growth throughout the entire internship timeline. | ✅    | ☐    | ☐       |
 
-### Needs Improvement
+---
 
-* Strengthen discipline and strictly comply with the rules and regulations of the company or any organization  
-* Improve problem-solving thinking  
-* Enhance communication skills in both daily interactions and professional contexts, including handling situations effectively
+### Areas for Improvement & Development Plan (Needs Improvement)
+
+Although I have unlocked significant developmental milestones, I recognize the need to focus on optimizing the following areas to fully prepare for professional Software Engineer roles:
+
+* **Mastering Advanced Cloud Expertise:** Dedicate more efforts to researching and refining complex architectural components within the AWS ecosystem. Practical implementations still require close alignment with the Mentor to ensure optimal cloud design.
+* **Strengthening Technical Problem-Solving Skills:** Continue sharpening system-level diagnostic thinking when facing non-deterministic errors or infrastructure auto-scaling blocks. Shift focus from applying superficial hot-fixes toward building sustainable architecture integrated with robust caching patterns.
+* **Deepening Ingestion of Modern AI Frameworks:** Proactively keep pace with enterprise GenAI implementations, learning to completely master advanced patterns like Multi-Agent systems and LLM variance management to seamlessly adopt them into the daily engineering workflow.
