@@ -26,6 +26,6 @@ pre: " <b> 1.7. </b> "
 * Capable of using **Amazon CloudWatch Metrics** to monitor performance indicators and check instance status logs (`StatusCheckFailed_AttachedEBS`) for the project server (`Web-Server-Nhom4`).
 * Learned how to manage database backups through DB Snapshots and clean up environment resources efficiently.
 
-![Nguyen Huu Tri](/images/tuan7,1.png)
+![Nguyen Huu Tri](images/tuan7,1.png)
 
-![Nguyen Huu Tri](/images/tuan7,2.png)
+![Nguyen Huu Tri](images/tuan7,2.png)

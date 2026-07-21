@@ -41,7 +41,7 @@ chapter: false
 
 ## Hình ảnh cá nhân
 
-![Nguyen Huu Tri](/images/avtcv.jpg)
+![Nguyen Huu Tri](images/avtcv.jpg)
 
 *Hình 1. Ảnh chân dung sinh viên.*
 

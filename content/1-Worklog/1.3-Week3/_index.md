@@ -26,8 +26,8 @@ pre: " <b> 1.3. </b> "
 * Got a grasp of Security Groups for opening and closing network ports.
 * Capable of using the local terminal to SSH into a remote cloud server and managing its lifecycle (stopping it when not in use).
 
-![Nguyen Huu Tri](/images/tuan3,1.png)
+![Nguyen Huu Tri](images/tuan3,1.png)
 
-![Nguyen Huu Tri](/images/tuan3,2.png)
+![Nguyen Huu Tri](images/tuan3,2.png)
 
-![Nguyen Huu Tri](/images/tuan3,3.png)
+![Nguyen Huu Tri](images/tuan3,3.png)

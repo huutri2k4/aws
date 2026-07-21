@@ -34,7 +34,7 @@ The **Internship Management System (IMS)** was developed by a team of 4 members 
 ### 3. Solution Architecture
 The system employs a web application model directly connected to storage and database services on AWS Cloud:
 
-![Nguyen Huu Tri](/images/sodoaws.jpg)
+![Nguyen Huu Tri](images/sodoaws.jpg)
 
 *AWS Services Utilized*
 - *Amazon S3*: Object storage dedicated to storing profile avatars, CV files, and weekly PDF reports.

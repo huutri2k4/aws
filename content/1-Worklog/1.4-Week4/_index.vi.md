@@ -26,6 +26,6 @@ pre: " <b> 1.4. </b> "
 * Gom đủ dữ liệu, hình ảnh thực hành để hoàn thành và nộp báo cáo tổng kết tiến độ 4 tuần đầu tiên.
 * Hiểu được bản chất mạng ảo Amazon VPC, phân biệt được cách hoạt động và sự phối hợp giữa hai lớp tường lửa Security Group (bảo vệ máy chủ) và NACL (bảo vệ mạng con Subnet).
 
-![Nguyen Huu Tri](/images/tuan4,1.png)
+![Nguyen Huu Tri](images/tuan4,1.png)
 
-![Nguyen Huu Tri](/images/tuan4,2.png)
+![Nguyen Huu Tri](images/tuan4,2.png)

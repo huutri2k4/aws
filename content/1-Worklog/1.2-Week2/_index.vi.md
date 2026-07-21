@@ -30,4 +30,4 @@ pre: " <b> 1.2. </b> "
 * Triển khai mượt mà các câu lệnh CLI nền tảng để truy vấn thông tin tài khoản, liệt kê tài nguyên và kiểm tra trạng thái dịch vụ mà không cần bật trình duyệt.
 * Đánh giá và phân biệt rõ ràng các kịch bản thực tế: khi nào nên dùng Console trực quan (phù hợp để làm quen, cấu hình nhanh) và khi nào nên dùng CLI mạnh mẽ (phù hợp để tự động hóa công việc bằng script).
 
-![Nguyen Huu Tri](/images/tuan2,1.png)
+![Nguyen Huu Tri](images/tuan2,1.png)

@@ -34,7 +34,7 @@ Dự án **Hệ thống Quản lý Thực tập sinh (Internship Management Syst
 ### 3. Kiến trúc giải pháp
 Hệ thống sử dụng mô hình ứng dụng web kết nối trực tiếp các dịch vụ lưu trữ và cơ sở dữ liệu trên AWS Cloud:
 
-![Nguyen Huu Tri](/images/sodoaws.jpg)
+![Nguyen Huu Tri](images/sodoaws.jpg)
 
 *Dịch vụ AWS sử dụng*
 - *Amazon S3*: Kho lưu trữ đối tượng chuyên dùng để lưu trữ ảnh avatar, file CV và báo cáo tuần dạng PDF.
