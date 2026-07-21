@@ -33,9 +33,7 @@ jobs:
 
       - name: Build with Hugo
         run: |
-          hugo \
-            --minify \
-            -b "https://huutri2k4.github.io/aws/"
+          hugo --minify
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
