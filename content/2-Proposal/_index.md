@@ -29,7 +29,7 @@ The solution creates a transparent and clear interactive environment, helping to
 
 The system is built on the AWS platform, using an independent virtual network space architecture with the IP range 10.0.0.0/16. This space is intricately partitioned into public and private subnets spanning across two availability zones to ensure high security, flexibility, and redundancy.
 
-![Nguyen Huu Tri](/aws/images/sodoaws.jpg)
+![Nguyen Huu Tri](/aws/images/kientruaws.jpg)
 
 _AWS Services Used_
 
