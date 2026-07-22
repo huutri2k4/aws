@@ -35,6 +35,6 @@ The practical work in this section focuses on provisioning infrastructure and es
 
 By the end of this workshop, the project will have a more complete cloud infrastructure foundation. The team will gain practical experience with AWS services and will better understand how cloud applications should be designed with both scalability and security in mind.
 
-> **Note:** All configurations in this workshop follow AWS security best practices and help reduce the risk of unauthorized access while improving the overall reliability of the system.
+
 
 ![Nguyen Huu Tri](/aws/images/s3.png)

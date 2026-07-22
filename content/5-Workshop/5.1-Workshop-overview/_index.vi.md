@@ -35,6 +35,5 @@ Nội dung thực hành tập trung vào việc triển khai hạ tầng và thi
 
 Sau khi hoàn thành bài thực hành, dự án sẽ có nền tảng hạ tầng trên AWS rõ ràng hơn. Nhóm thực hiện sẽ có thêm kinh nghiệm thực tế về cách thiết kế hệ thống đám mây theo hướng bảo mật, dễ mở rộng và phù hợp với môi trường vận hành thực tế.
 
-> **Lưu ý:** Tất cả cấu hình trong bài workshop này đều tuân thủ các nguyên tắc bảo mật của AWS, giúp giảm nguy cơ truy cập trái phép và nâng cao độ tin cậy cho hệ thống.
 
 ![Nguyen Huu Tri](/aws/images/s3.png)
