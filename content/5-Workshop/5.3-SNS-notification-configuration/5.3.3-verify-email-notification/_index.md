@@ -228,7 +228,7 @@ After testing, SNS typically shows:
 ✓ Application can integrate with SNS
 
 
-![Nguyen Huu Tri](aws/images/sns,3.png)
+![Nguyen Huu Tri](/aws/images/sns,3.png)
 
 #### Integration Verification
 

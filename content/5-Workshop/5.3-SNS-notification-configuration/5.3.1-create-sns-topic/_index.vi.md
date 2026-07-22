@@ -110,7 +110,7 @@ Topic sử dụng chính sách SNS mặc định:
 ✓ Sẵn sàng cho đăng ký email
 ✓ Sẵn sàng để tích hợp ứng dụng web
 
-![Nguyen Huu Tri](aws/images/sns,1.png)
+![Nguyen Huu Tri](/aws/images/sns,1.png)
 
 #### Bước Tiếp theo
 

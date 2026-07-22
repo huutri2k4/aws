@@ -53,17 +53,17 @@ To make the solution more complete, the next improvements should include:
 
 - S3 bucket overview.
 
-![Nguyen Huu Tri](aws/images/s3.png)
+![Nguyen Huu Tri](/aws/images/s3.png)
 
 - `student-profile/` folder and the `2/`, `3/` subfolders.
 
-![Nguyen Huu Tri](aws/images/s3,1.png)
+![Nguyen Huu Tri](/aws/images/s3,1.png)
 
 - `weekly-report-templates/` folder and the `1/` subfolder.
 
-![Nguyen Huu Tri](aws/images/s3,2.png)
+![Nguyen Huu Tri](/aws/images/s3,2.png)
 
 - Full bucket folder structure.
 
-![Nguyen Huu Tri](aws/images/s3,3.png)
+![Nguyen Huu Tri](/aws/images/s3,3.png)
 

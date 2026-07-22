@@ -133,7 +133,7 @@ To further strengthen the security posture of the system, the following improvem
 
 The following screenshot shows the IAM users management console displaying the two active users in the AWS account:
 
-![Nguyen Huu Tri](aws/images/iam1.jpg)
+![Nguyen Huu Tri](/aws/images/iam1.jpg)
 
 *Figure 5.6.1: IAM Users management console showing internship-admin and internship-app users with their activity status and security configuration.*
 

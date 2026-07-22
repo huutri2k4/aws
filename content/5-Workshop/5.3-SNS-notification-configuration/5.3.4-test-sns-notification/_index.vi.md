@@ -441,7 +441,7 @@ Hệ thống thông báo SNS cho ứng dụng quản lý thực tập sinh hoàn
 
 **Trạng thái: SẴN SÀNG CHO PRODUCTION** ✅
 
-![Nguyen Huu Tri](aws/images/sns,3.png)
+![Nguyen Huu Tri](/aws/images/sns,3.png)
 
 #### Bước Tiếp theo
 

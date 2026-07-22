@@ -177,7 +177,7 @@ Trong SNS Console, bạn có thể xem:
 3. **Truy cập được kiểm soát** qua chính sách IAM (Phần 5.5)
 4. **Audit logs** có sẵn trong CloudTrail nếu bật
 
-![Nguyen Huu Tri](aws/images/sns,2.png)
+![Nguyen Huu Tri](/aws/images/sns,2.png)
 
 #### Bước Tiếp theo
 

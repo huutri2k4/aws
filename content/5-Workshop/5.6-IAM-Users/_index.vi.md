@@ -133,7 +133,7 @@ Việc cấu hình IAM users đã được hoàn tất thành công. Cả hai us
 
 Ảnh chụp dưới đây hiển thị giao diện quản lý IAM users với hai users hoạt động trong tài khoản AWS:
 
-![Nguyen Huu Tri](aws/images/iam1.jpg)
+![Nguyen Huu Tri](/aws/images/iam1.jpg)
 
 *Hình 5.6.1: Giao diện quản lý IAM users hiển thị users internship-admin và internship-app với trạng thái hoạt động và cấu hình bảo mật.*
 

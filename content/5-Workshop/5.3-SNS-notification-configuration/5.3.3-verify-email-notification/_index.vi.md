@@ -220,7 +220,7 @@ Sau khi kiểm tra, SNS thường hiển thị:
 - **Gửi thất bại**: Tự động thử lại tới 100 lần trong 24 giờ
 
 
-![Nguyen Huu Tri](aws/images/sns,3.png)
+![Nguyen Huu Tri](/aws/images/sns,3.png)
 
 #### Kiểm tra SNS Hoàn thành
 

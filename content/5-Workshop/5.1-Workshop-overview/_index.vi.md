@@ -37,4 +37,4 @@ Sau khi hoàn thành bài thực hành, dự án sẽ có nền tảng hạ tầ
 
 > **Lưu ý:** Tất cả cấu hình trong bài workshop này đều tuân thủ các nguyên tắc bảo mật của AWS, giúp giảm nguy cơ truy cập trái phép và nâng cao độ tin cậy cho hệ thống.
 
-![Nguyen Huu Tri](aws/images/s3.png)
+![Nguyen Huu Tri](/aws/images/s3.png)

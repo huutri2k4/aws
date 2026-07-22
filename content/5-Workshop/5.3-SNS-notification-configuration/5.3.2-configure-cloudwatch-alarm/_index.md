@@ -177,7 +177,7 @@ To view subscription details:
 3. **Access controlled** via IAM policies (Section 5.5)
 4. **Audit logs** available in CloudTrail if enabled
 
-![Nguyen Huu Tri](aws/images/sns,2.png)
+![Nguyen Huu Tri](/ws/images/sns,2.png)
 
 #### Next Steps
 

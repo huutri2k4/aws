@@ -442,7 +442,7 @@ The SNS notification system for the internship management application is fully f
 **Status: READY FOR PRODUCTION** ✅
 
 
-![Nguyen Huu Tri](aws/images/sns,3.png)
+![Nguyen Huu Tri](/aws/images/sns,3.png)
 
 #### Next Steps
 

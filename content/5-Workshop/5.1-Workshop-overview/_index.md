@@ -37,4 +37,4 @@ By the end of this workshop, the project will have a more complete cloud infrast
 
 > **Note:** All configurations in this workshop follow AWS security best practices and help reduce the risk of unauthorized access while improving the overall reliability of the system.
 
-![Nguyen Huu Tri](aws/images/s3.png)
+![Nguyen Huu Tri](/aws/images/s3.png)

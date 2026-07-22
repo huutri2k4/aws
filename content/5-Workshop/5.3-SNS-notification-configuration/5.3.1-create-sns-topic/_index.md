@@ -110,7 +110,7 @@ The topic uses the default SNS resource policy:
 ✓ Ready for email subscriptions
 ✓ Ready for web application integration
 
-![Nguyen Huu Tri](aws/images/sns,1.png)
+![Nguyen Huu Tri](/aws/images/sns,1.png)
 
 #### Next Steps
 
