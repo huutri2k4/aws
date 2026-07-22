@@ -91,12 +91,12 @@ Buổi Workshop mang lại cho tôi những bài học vô giá khi cân bằng 
 
 ### Một số hình ảnh sự kiện
 
-![Nguyen Huu Tri](/images/sk3,1.jpg)
+![Nguyen Huu Tri](/aws/images/sk3,1.jpg)
 
-![Nguyen Huu Tri](/images/sk3,2.jpg)
+![Nguyen Huu Tri](/aws/images/sk3,2.jpg)
 
-![Nguyen Huu Tri](/images/sk3,3.jpg)
+![Nguyen Huu Tri](/aws/images/sk3,3.jpg)
 
-![Nguyen Huu Tri](/images/sk3,4.jpg)
+![Nguyen Huu Tri](/aws/images/sk3,4.jpg)
 
-![Nguyen Huu Tri](/images/sk3,5.jpg)
+![Nguyen Huu Tri](/aws/images/sk3,5.jpg)

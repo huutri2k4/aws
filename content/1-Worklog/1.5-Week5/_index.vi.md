@@ -26,6 +26,6 @@ pre: " <b> 1.5. </b> "
 * Phân biệt được khi nào dùng Public Subnet để chạy Web và khi nào dùng Private Subnet để giấu Database, biết cách cấu hình Route Table cơ bản điều hướng luồng mạng.
 * Hoàn thành dọn dẹp các tài nguyên sau khi làm lab xong để tài khoản luôn gọn gàng, an toàn.
 
-![Nguyen Huu Tri](/images/tuan5,1.png)
+![Nguyen Huu Tri](/aws/images/tuan5,1.png)
 
-![Nguyen Huu Tri](/images/tuan5,2.png)
+![Nguyen Huu Tri](/aws/images/tuan5,2.png)

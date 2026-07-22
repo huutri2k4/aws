@@ -41,7 +41,7 @@ chapter: false
 
 ## Personal Image
 
-![Nguyen Huu Tri](/images/avtcv.jpg)
+![Nguyen Huu Tri](/aws/images/avtcv.jpg)
 
 *Figure 1. Student portrait.*
 

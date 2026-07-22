@@ -46,6 +46,6 @@ The integrated Dual-Token Authentication solution seamlessly combining Amazon Co
 ...
 offering elastic throughput performance capable of driving real-time persistent WebSocket configurations.
 
-![Nguyen Huu Tri](/images/tri.jpg)
+![Nguyen Huu Tri](/aws/images/tri.jpg)
 
 **Reference Source:** <https://aws.amazon.com/blogs/architecture/dual-token-authentication-for-nakama-game-servers-with-amazon-cognito-on-aws/>

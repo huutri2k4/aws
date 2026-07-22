@@ -26,6 +26,6 @@ pre: " <b> 1.5. </b> "
 * Understand when to use Public Subnets for web apps and Private Subnets for backend/databases, along with basic Route Table configurations.
 * Cleaned up all temporary lab resources to maintain a cost-efficient and secure cloud environment.
 
-![Nguyen Huu Tri](/images/tuan5,1.png)
+![Nguyen Huu Tri](/aws/images/tuan5,1.png)
 
-![Nguyen Huu Tri](/images/tuan5,2.png)
+![Nguyen Huu Tri](/aws/images/tuan5,2.png)

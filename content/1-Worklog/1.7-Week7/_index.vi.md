@@ -26,6 +26,6 @@ pre: " <b> 1.7. </b> "
 * Sử dụng thành thạo bộ công cụ **Amazon CloudWatch Metrics** để kiểm tra và theo dõi các lỗi hoặc trạng thái ổ đĩa (`StatusCheckFailed_AttachedEBS`) của máy chủ nhóm (`Web-Server-Nhom4`).
 * Biết cách làm chủ quy trình backup dữ liệu bằng DB Snapshot và dọn dẹp tài nguyên gọn gàng sau khi hoàn thành bài lab.
 
-![Nguyen Huu Tri](/images/tuan7,1.png)
+![Nguyen Huu Tri](/aws/images/tuan7,1.png)
 
-![Nguyen Huu Tri](/images/tuan7,2.png)
+![Nguyen Huu Tri](/aws/images/tuan7,2.png)

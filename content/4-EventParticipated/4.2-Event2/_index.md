@@ -97,10 +97,10 @@ Attending the **AWS First Cloud AI Journey Community Day** at the 26th Floor of 
 
 ### Some event photos
 
-![Nguyen Huu Tri](/images/sk2,1.jpg)
+![Nguyen Huu Tri](/aws/images/sk2,1.jpg)
 
-![Nguyen Huu Tri](/images/sk2,2.jpg)
+![Nguyen Huu Tri](/aws/images/sk2,2.jpg)
 
-![Nguyen Huu Tri](/images/sk2,3.jpg)
+![Nguyen Huu Tri](/aws/images/sk2,3.jpg)
 
-![Nguyen Huu Tri](/images/sk2,4.jpg)
+![Nguyen Huu Tri](/aws/images/sk2,4.jpg)

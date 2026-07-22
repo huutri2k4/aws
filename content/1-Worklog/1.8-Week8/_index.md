@@ -26,6 +26,6 @@ pre: " <b> 1.8. </b> "
 * Gained a clear understanding of combining ALBs for traffic distribution and Auto Scaling Groups for handling traffic spikes.
 * Capable of configuring operational limits (Min/Max/Desired) and integrating Amazon SNS for automatic status alerts.
 
-![Nguyen Huu Tri](/images/tuan8,1.png)
+![Nguyen Huu Tri](/aws/images/tuan8,1.png)
 
-![Nguyen Huu Tri](/images/tuan8,2.png)
+![Nguyen Huu Tri](/aws/images/tuan8,2.png)

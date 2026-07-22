@@ -26,4 +26,4 @@ pre: " <b> 1.6. </b> "
 * Biết cách biến một S3 bucket thành nơi lưu trữ và chạy một trang web tĩnh cơ bản.
 * Phân biệt được các hình thức mua máy chủ EC2 (On-Demand, Reserved, Spot) tùy theo nhu cầu và ngân sách của dự án.
 
-![Nguyen Huu Tri](/images/tuan6,1.png)
+![Nguyen Huu Tri](/aws/images/tuan6,1.png)

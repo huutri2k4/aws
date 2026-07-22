@@ -43,6 +43,6 @@ Bên cạnh đó, Go Runtime Hook chỉ chấp nhận JWT hợp lệ và luôn s
 ### Kết luận
 Giải pháp Dual-Token Authentication kết hợp giữa Amazon Cognito và Nakama giúp xây dựng một hệ thống xác thực an toàn, linh hoạt và phù hợp cho các game trực tuyến hiện đại. Với sự hỗ trợ của CloudFront, ALB, NLB và Amazon ECS Fargate, hệ thống không chỉ tăng cường bảo mật mà còn đảm bảo khả năng mở rộng, hiệu suất cao và hỗ trợ tốt cho các kết nối WebSocket thời gian thực.
 
-![Nguyen Huu Tri](/images/tri.jpg)
+![Nguyen Huu Tri](/aws/images/tri.jpg)
 
 **Nguồn tham khảo:** <https://aws.amazon.com/blogs/architecture/dual-token-authentication-for-nakama-game-servers-with-amazon-cognito-on-aws/>

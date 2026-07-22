@@ -89,8 +89,8 @@ Buổi hội thảo mang lại cho tôi những bài học thực tế vô giá 
 
 ### Một số hình ảnh sự kiện
 
-![Nguyen Huu Tri](/images/sk1.jpg)
+![Nguyen Huu Tri](/aws/images/sk1.jpg)
 
-![Nguyen Huu Tri](/images/sk1,2.jpg)
+![Nguyen Huu Tri](/aws/images/sk1,2.jpg)
 
-![Nguyen Huu Tri](/images/sk1,3.jpg)
+![Nguyen Huu Tri](/aws/images/sk1,3.jpg)

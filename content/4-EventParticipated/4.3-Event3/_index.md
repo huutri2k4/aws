@@ -91,12 +91,12 @@ This workshop provided immense engineering value by striking a perfect equilibri
 
 ### Some event photos
 
-![Nguyen Huu Tri](/images/sk3,1.jpg)
+![Nguyen Huu Tri](/aws/images/sk3,1.jpg)
 
-![Nguyen Huu Tri](/images/sk3,2.jpg)
+![Nguyen Huu Tri](/aws/images/sk3,2.jpg)
 
-![Nguyen Huu Tri](/images/sk3,3.jpg)
+![Nguyen Huu Tri](/aws/images/sk3,3.jpg)
 
-![Nguyen Huu Tri](/images/sk3,4.jpg)
+![Nguyen Huu Tri](/aws/images/sk3,4.jpg)
 
-![Nguyen Huu Tri](/images/sk3,5.jpg)
+![Nguyen Huu Tri](/aws/images/sk3,5.jpg)

@@ -97,10 +97,10 @@ Tham gia buổi **AWS First Cloud AI Journey Community Day** tại Bitexco Finan
 
 ### Một số hình ảnh sự kiện
 
-![Nguyen Huu Tri](/images/sk2,1.jpg)
+![Nguyen Huu Tri](/aws/images/sk2,1.jpg)
 
-![Nguyen Huu Tri](/images/sk2,2.jpg)
+![Nguyen Huu Tri](/aws/images/sk2,2.jpg)
 
-![Nguyen Huu Tri](/images/sk2,3.jpg)
+![Nguyen Huu Tri](/aws/images/sk2,3.jpg)
 
-![Nguyen Huu Tri](/images/sk2,4.jpg)
+![Nguyen Huu Tri](/aws/images/sk2,4.jpg)

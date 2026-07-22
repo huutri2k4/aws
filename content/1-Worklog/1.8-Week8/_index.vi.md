@@ -26,6 +26,6 @@ pre: " <b> 1.8. </b> "
 * Hiểu được nguyên lý phối hợp giữa bộ cân bằng tải ALB để chia đều lượng truy cập và hệ thống Auto Scaling để tự động bật thêm máy chủ khi web bị lag.
 * Biết cách cài đặt các thông số Min/Max cho hệ thống co giãn và tích hợp thông báo qua Email bằng dịch vụ Amazon SNS.
 
-![Nguyen Huu Tri](/images/tuan8,1.png)
+![Nguyen Huu Tri](/aws/images/tuan8,1.png)
 
-![Nguyen Huu Tri](/images/tuan8,2.png)
+![Nguyen Huu Tri](/aws/images/tuan8,2.png)

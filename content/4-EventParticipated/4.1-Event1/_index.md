@@ -89,8 +89,8 @@ This kickoff panel provided exceptional educational returns by bridging the gap 
 
 ### Some event photos
 
-![Nguyen Huu Tri](/images/sk1.jpg)
+![Nguyen Huu Tri](/aws/images/sk1.jpg)
 
-![Nguyen Huu Tri](/images/sk1,2.jpg)
+![Nguyen Huu Tri](/aws/images/sk1,2.jpg)
 
-![Nguyen Huu Tri](/images/sk1,3.jpg)
+![Nguyen Huu Tri](/aws/images/sk1,3.jpg)
