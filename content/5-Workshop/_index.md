@@ -19,8 +19,8 @@ In this hands-on workshop, I configured and integrated the core storage, databas
 #### Lab Contents
 
 1. [Introduction](5.1-Workshop-overview/)
-2. [Prerequisites](5.2-Prerequiste/)
-3. [Provisioning and Configuring Amazon S3 Bucket](5.3-S3-setup/)
-4. [Provisioning and Connecting Amazon RDS MySQL](5.4-RDS-setup/)
-5. [Configuring AWS IAM Policies & Roles](5.5-Policy/)
-6. [Clean Up Resources](5.6-Cleanup/)
+2. [S3 Bucket Configuration](5.2-S3Bucket/)
+3. [SNS Notification Configuration](5.3-SNS-notification-configuration/)
+4. [Web Application Firewall (WAF)](5.4-WAF/)
+5. [IAM Policies & Access Control](5.5-Policy/)
+6. [IAM Users Management](5.6-IAM-Users/)
