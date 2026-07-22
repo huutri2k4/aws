@@ -24,3 +24,9 @@ In this hands-on workshop, I configured and integrated the core storage, databas
 4. [Web Application Firewall (WAF)](5.4-WAF/)
 5. [IAM Policies & Access Control](5.5-Policy/)
 6. [IAM Users Management](5.6-IAM-Users/)
+
+[🎥 View Demo](https://drive.google.com/file/d/17_y0AItx0pbzK9KEg5qWWqycTkKmxbpS/view?usp=sharing)
+
+## GitHub
+
+[💻 View Source Code](https://github.com/VanVu1101/DATHUCTAPTN)
