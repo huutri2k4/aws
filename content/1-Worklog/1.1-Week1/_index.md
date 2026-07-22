@@ -26,6 +26,6 @@ pre: " <b> 1.1. </b> "
 * Got a grasp of AWS infrastructure fundamentals (Regions/AZs) and what EC2 and S3 are used for.
 * Successfully created a personal AWS account, ready for the upcoming hands-on lab exercises.
 
-![Nguyen Huu Tri](images/dk.png)
+![Nguyen Huu Tri](/images/dk.png)
 
-![Nguyen Huu Tri](images/baomat.png)
+![Nguyen Huu Tri](/images/baomat.png)

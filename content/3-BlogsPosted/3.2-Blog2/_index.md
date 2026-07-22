@@ -78,6 +78,6 @@ This is especially useful when using: **AWS CodeBuild, AWS CodePipeline, and ECS
 ### Conclusion
 This is a **simple, cost-effective solution** but highly suitable for Monorepo systems or Microservices architectures on AWS.
 
-![Nguyen Huu Tri](images/VA.jpg)
+![Nguyen Huu Tri](/images/VA.jpg)
 
 **Reference Source:** <https://aws.amazon.com/vi/blogs/devops/integrate-github-monorepo-with-aws-codepipeline-to-run-project-specific-ci-cd-pipelines/>

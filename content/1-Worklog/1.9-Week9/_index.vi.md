@@ -26,4 +26,4 @@ pre: " <b> 1.9. </b> "
 * Chốt xong yêu cầu và phân công công việc rõ ràng cho 4 thành viên trong nhóm đối với dự án "Hệ thống quản lý thực tập sinh".
 * Thiết kế xong bộ giao diện UI/UX trên Figma và setup sẵn kho chứa mã nguồn (Repository) để tuần sau bắt đầu nhảy vào code.
 
-![Nguyen Huu Tri](images/tuan9,1.png)
+![Nguyen Huu Tri](/images/tuan9,1.png)

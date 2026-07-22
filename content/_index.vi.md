@@ -21,15 +21,15 @@ chapter: false
 
 &emsp; **Khoa:** Công nghệ Thông tin
 
-&emsp; **Chuyên ngành:** Kỹ thuật Phần mềm
+&emsp; **Chuyên ngành:** Công nghệ phần mềm
 
 &emsp; **Lớp:** 22DTHE2
 
-&emsp; **Công ty thực tập:** Amazon Web Services Vietnam Co., Ltd.
+&emsp; **Công ty thực tập:** Công ty TNHH Amazon Web Services Việt Nam
 
 &emsp; **Chương trình thực tập:** Workforce Bootcamp – First Cloud AI Journey
 
-&emsp; **Người hướng dẫn (Mentor):** Nguyễn Gia Hùng
+&emsp; **Người hướng dẫn (Mentor):** Nguyễn Gia Hưng
 
 &emsp; **Email Mentor:** hunggia@amazon.com
 
@@ -41,7 +41,7 @@ chapter: false
 
 ## Hình ảnh cá nhân
 
-![Nguyen Huu Tri](images/avtcv.jpg)
+![Nguyen Huu Tri](/images/avtcv.jpg)
 
 *Hình 1. Ảnh chân dung sinh viên.*
 

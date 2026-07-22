@@ -78,6 +78,6 @@ Trước đây mình thường xem Lambda như một hàm xử lý đơn giản.
 ### Kết luận
 Đây là một **giải pháp đơn giản, ít tốn kém** nhưng rất phù hợp với các hệ thống Monorepo hoặc kiến trúc Microservices trên AWS.
 
-![Nguyen Huu Tri](images/VA.jpg)
+![Nguyen Huu Tri](/images/VA.jpg)
 
 **Nguồn tham khảo:** <https://aws.amazon.com/vi/blogs/devops/integrate-github-monorepo-with-aws-codepipeline-to-run-project-specific-ci-cd-pipelines/>

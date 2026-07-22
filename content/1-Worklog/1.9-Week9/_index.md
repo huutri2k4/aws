@@ -26,4 +26,4 @@ pre: " <b> 1.9. </b> "
 * Finalized project specifications and established clear role definitions for the 4 team members on the Internship Management System.
 * Completed wireframes and UI components on Figma, and established the baseline Git workspace ready for development.
 
-![Nguyen Huu Tri](images/tuan9,1.png)
+![Nguyen Huu Tri](/images/tuan9,1.png)

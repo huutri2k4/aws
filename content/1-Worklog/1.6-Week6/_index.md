@@ -26,4 +26,4 @@ pre: " <b> 1.6. </b> "
 * Know how to host a basic static website using Amazon S3 storage features.
 * Understand the core differences between EC2 payment types (On-Demand, Reserved, Spot) to select cost-efficient hosting options.
 
-![Nguyen Huu Tri](images/tuan6,1.png)
+![Nguyen Huu Tri](/images/tuan6,1.png)

@@ -26,6 +26,6 @@ pre: " <b> 1.4. </b> "
 * Gathered screenshots and logs to complete and submit the first 4-week progress report.
 * Got a solid grasp of Amazon VPC and understood how Security Groups (instance firewall) and NACLs (subnet firewall) work together.
 
-![Nguyen Huu Tri](images/tuan4,1.png)
+![Nguyen Huu Tri](/images/tuan4,1.png)
 
-![Nguyen Huu Tri](images/tuan4,2.png)
+![Nguyen Huu Tri](/images/tuan4,2.png)

@@ -30,4 +30,4 @@ pre: " <b> 1.2. </b> "
 * Executed baseline terminal CLI queries smoothly to extract account identity details, list configurations, and monitor cloud statuses from the terminal.
 * Formulated a clear comparative analysis between the web console and CLI, establishing best practices on when to leverage graphical workflows versus automated scripting.
 
-![Nguyen Huu Tri](images/tuan2,1.png)
+![Nguyen Huu Tri](/images/tuan2,1.png)

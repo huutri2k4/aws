@@ -26,6 +26,6 @@ pre: " <b> 1.1. </b> "
 * Nắm được các khái niệm cơ bản về hạ tầng AWS (Region, AZ) và biết EC2 với S3 dùng để làm gì.
 * Tạo thành công tài khoản AWS cá nhân để chuẩn bị cho các bài thực hành (Lab) ở tuần sau.
 
-![Nguyen Huu Tri](images/dk.png)
+![Nguyen Huu Tri](/images/dk.png)
 
-![Nguyen Huu Tri](images/baomat.png)
+![Nguyen Huu Tri](/images/baomat.png)

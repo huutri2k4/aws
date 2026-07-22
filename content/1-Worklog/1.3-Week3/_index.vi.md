@@ -26,8 +26,8 @@ pre: " <b> 1.3. </b> "
 * Hiểu cách hoạt động của Security Group để đóng/mở cổng mạng.
 * Biết dùng Terminal để SSH vào quản lý máy chủ từ xa và biết cách tắt máy (Stop) khi không dùng để tiết kiệm tiền.
 
-![Nguyen Huu Tri](images/tuan3,1.png)
+![Nguyen Huu Tri](/images/tuan3,1.png)
 
-![Nguyen Huu Tri](images/tuan3,2.png)
+![Nguyen Huu Tri](/images/tuan3,2.png)
 
-![Nguyen Huu Tri](images/tuan3,3.png)
+![Nguyen Huu Tri](/images/tuan3,3.png)
