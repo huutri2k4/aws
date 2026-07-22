@@ -57,14 +57,14 @@ Bucket S3 đã được tạo thành công và sẵn sàng cho các hoạt độ
 
 - Thư mục `student-profile/` và các thư mục con `2/`, `3/`.
 
-![Nguyen Huu Tri](/aws/images/s3-1.jpg)
+![Nguyen Huu Tri](/aws/images/s3,1.jpg)
 
 - Thư mục `weekly-report-templates/` và thư mục con `1/`.
 
-![Nguyen Huu Tri](/aws/images/s3-2.jpg)
+![Nguyen Huu Tri](/aws/images/s3,2.jpg)
 
 - Cấu trúc thư mục tổng thể.
 
-![Nguyen Huu Tri](/aws/images/s3-3.jpg)
+![Nguyen Huu Tri](/aws/images/s3,3.jpg)
 
 
