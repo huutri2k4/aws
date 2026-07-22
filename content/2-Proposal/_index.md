@@ -1,90 +1,118 @@
 ---
 title: "Proposal"
-date: 2026-04-17
+date: 2026-07-01
 weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
 
-In this section, the team summarizes the bootcamp/internship activities that were **planned** and **executed** for the project.
+# Internship Management System
 
-# Internship Management System (IMS)
-## Internship Management Solution Integrated with AWS Services (S3, RDS, IAM)
+## A Flexible Cloud Computing Solution for Internship Management
 
 ### 1. Executive Summary
-The **Internship Management System (IMS)** was developed by a team of 4 members to streamline, track progress, submit reports, and evaluate interns for enterprises and academic institutions. The system utilizes core **AWS Cloud services (Singapore Region `ap-southeast-1`)**, including **Amazon S3** for media/document storage, **Amazon RDS (MySQL)** for centralized database management, and **AWS IAM** for identity and access control.
+
+The Internship Management System is designed to enhance connectivity efficiency and manage workflow progress for the FCAJ internship program. The platform provides a decoupled architecture between a static interface (hosted on S3) and a dynamic processing flow (EC2), distributed globally via the CloudFront network. The project leverages AWS infrastructure services to deliver high availability with a Multi-AZ architecture, while optimizing network costs by using a VPC Endpoint instead of a NAT Gateway for report document upload tasks.
 
 ### 2. Problem Statement
-*Current Challenges*
-* Traditional internship management relies heavily on manual processes using Excel files, leading to lost weekly reports, fragmented task assignments, and inefficient performance evaluations.
-* Storing PDF reports, CV documents, and profile avatars on local server drives poses security risks, lacks distributed storage, and quickly consumes local disk capacity.
-* Self-hosted databases on local machines lack robust security controls, flexible backup options, and high-performance querying capabilities.
 
-*Proposed Solution*
-* Build a modern web application adhering to RESTful API Service architecture.
-* Integrate **Amazon S3** to manage cloud storage for all student profile avatars, CV documents, and submitted weekly PDF reports.
-* Deploy an **Amazon RDS MySQL** relational database to securely and efficiently store user data, internship terms, task assignments, and evaluations.
-* Utilize **AWS IAM** to define granular permission policies (IAM Roles/Policies), ensuring the backend application interacts with S3 and RDS under the principle of least privilege.
+_Current Problem_  
+The current intern management process faces many limitations in tracking progress, assigning tasks, and evaluating results. The lack of a centralized system easily leads to data errors, difficulties in synchronizing information, and creates major obstacles for management as well as communication between mentors and interns.
 
-*Benefits and Return on Investment (ROI)*
-* Digitizes 100% of task assignments, report submissions, and evaluations, reducing manual administrative workloads for Mentors and Admins by 80%.
-* Offloads local storage requirements entirely by shifting all static assets to secure, low-cost Amazon S3 storage.
-* Ensures data integrity and seamless management via a fully managed Amazon RDS database instance.
+_The Solution_  
+Build a centralized system on AWS to handle traffic flexibly by separating the static flow (S3 frontend) and dynamic flow (ALB forwarding to EC2). Protect the web application with a WAF firewall at the network edge. Optimize periodic report submissions by granting direct permissions via Presigned URLs and internal routing through a VPC Endpoint.
+
+_Benefits and Return on Investment (ROI)_  
+The solution creates a transparent and clear interactive environment, helping to optimize the information exchange process and proactively discuss work. The system automates the progress tracking flow, supporting significant savings in manual operation time. The architectural design ensures the system operates smoothly while strictly adhering to the limited budget allocated for students.
 
 ### 3. Solution Architecture
-The system employs a web application model directly connected to storage and database services on AWS Cloud:
+
+The system is built on the AWS platform, using an independent virtual network space architecture with the IP range 10.0.0.0/16. This space is intricately partitioned into public and private subnets spanning across two availability zones to ensure high security, flexibility, and redundancy.
 
 ![Nguyen Huu Tri](/aws/images/sodoaws.jpg)
 
-*AWS Services Utilized*
-- *Amazon S3*: Object storage dedicated to storing profile avatars, CV files, and weekly PDF reports.
-- *Amazon RDS (MySQL)*: Relational database storing user accounts, internship batches, tasks, and evaluation results.
-- *AWS IAM*: Identity and access management securing backend interactions with S3 buckets and RDS instances.
+_AWS Services Used_
 
-*Component Design*
-- *Frontend & Service Tier*: Users interact with the Web Frontend, which sends asynchronous requests to the Backend (RESTful API Service).
-- *File Storage Tier*: When uploading avatars or submitting PDF reports, the application uses the AWS SDK to push files directly to an **Amazon S3 Bucket**.
-- *Database Tier*: All queries regarding user accounts, internship assignments, and grading are executed against the **Amazon RDS MySQL Database**.
-- *Security & Access Tier*: **AWS IAM** provides IAM Roles and Policies to restrict actions (`s3:PutObject`, `s3:GetObject`), securing cloud assets.
+- _Security and Distribution_: AWS WAF, Amazon CloudFront.
+- _Compute and Load Balancing_: Amazon EC2, Auto Scaling Group, Application Load Balancer.
+- _Storage and Database_: Amazon S3 (Frontend & PDF Reports), Amazon RDS MySQL.
+- _Networking and Identity_: Amazon VPC, VPC Endpoint for S3, Security Group, IAM Role, AWS Secrets Manager.
+- _System Monitoring_: Amazon CloudWatch, Amazon SNS.
+
+_Component Design_
+
+- _Interface and Access_: User connections are securely encrypted via HTTPS. CloudFront combined with the WAF firewall helps distribute static content from the S3 Frontend at high speeds and prevents malicious access from the network edge.
+- _Dynamic Flow Processing_: Business requests pass through the Internet Gateway to the Application Load Balancer, then are intelligently routed to EC2 instances located within the auto-scaling group.
+- _Secure File Upload Flow_: When a report submission operation occurs, EC2 will retrieve information from Secrets Manager to generate a Presigned URL. The PDF file is then pushed directly to S3 via the internal VPC Endpoint network, helping to optimize costs and enhance security.
+- _Core Data Storage_: Intern information is managed by an RDS MySQL database cluster deployed in a multi-zone model situated entirely within the private network, completely isolated from the outside.
+- _Monitoring System_: CloudWatch continuously collects operational metrics; if there is a risk or overload, an Alarm will automatically trigger SNS to send warning emails immediately to the operations team.
 
 ### 4. Technical Implementation
-*Implementation Stages*
-Executed by a 4-member team over 12 weeks across 4 key phases:
-1. *Research & Architecture Design*: Analyzed business requirements, finalized core modules (Auth, Management, Reports, Dashboard), created Figma wireframes/UIs, and drafted system architecture (Weeks 1–4).
-2. *Frontend & Service Layer Development*: Standardized team Git Flow practices on GitLab, split frontend components, and built RESTful API Service Patterns (Weeks 5–8).
-3. *AWS Infrastructure & Integration*: Provisioned Amazon RDS MySQL, created S3 Buckets, defined IAM Policies/Roles, and integrated image/PDF upload APIs targeting S3 (Weeks 9–11).
-4. *Testing & Final Review*: Tested S3 file upload workflows, verified RDS queries, reviewed IAM permissions, and compiled final reports (Week 12).
 
-*Technical Requirements*
-- *Collaborative Environment*: Managed codebase via GitLab adopting Git Flow branching strategies.
-- *Frontend & Backend*: Built modular component-driven frontends connected to asynchronous RESTful API backend service layers.
-- *AWS Integration*: Mastered AWS SDK integration within the backend to handle Amazon S3 file uploads, Amazon RDS MySQL Endpoint connections, and IAM JSON policy configurations.
+_Implementation Phases_  
+The project implementation process is continuous and divided into 4 main phases, adhering to the schedule from April 17, 2026, to July 12, 2026:
 
-### 5. Milestones & Timeline
-- *Phase 1 (Weeks 1–4)*: Learned AWS fundamentals (EC2, S3, IAM) and submitted Phase 1 Progress Report.
-- *Phase 2 (Weeks 5–8)*: Hands-on practice with IAM Roles, S3 Versioning, provisioning, and connecting Amazon RDS MySQL.
-- *Phase 3 (Weeks 9–11)*: Kicked off the "Internship Management System" group project, designed Figma mockups, allocated tasks among 4 members, provisioned RDS Database, and submitted architecture diagrams for Admin review.
-- *Phase 4 (Week 12)*: Finalized image/PDF upload features to Amazon S3, integrated data with Amazon RDS MySQL, conducted system testing, and submitted final reports.
+1.  _Research and Architecture Design_: Explore foundational AWS services, sketch the overall system architecture, and design the VPC virtual network space (Month 4).
+2.  _Cost Calculation, Feasibility Check, and Infrastructure Construction_: Evaluate the feasibility of the solution and estimate infrastructure costs to ensure strict adherence to the budget limit. Concurrently, proceed with deploying compute components (Application Load Balancer, Auto Scaling Group, EC2) (Month 5).
+3.  _Architecture Adjustment for Cost/Solution Optimization_: Integrate the RDS database system, set up the VPC Endpoint, and refine the file upload flow using Presigned URLs (Month 6).
+4.  _Development, Testing_: Integrate the CloudFront content delivery network, WAF firewall, set up the CloudWatch monitoring system, and conduct comprehensive testing before handover (Month 7).
+
+_Technical Requirements_
+
+- _Network Infrastructure and Security_: Establish a VPC that complies with multi-layer security principles, with separated Public and Private Subnets. Apply AWS WAF at the network edge to filter malicious traffic. Accounts and services must be granted the principle of least privilege via IAM Roles, while database connection credentials must be securely managed in AWS Secrets Manager.
+- _Servers and Databases_: The dynamic processing application on Amazon EC2 must be configured with an Auto Scaling Group to automatically adjust flexibly according to load. The RDS (MySQL) relational database management system requires precise table schema design, strict foreign key constraints, and must be configured with Multi-AZ to ensure fault tolerance.
+- _Storage and Distribution_: The static web interface is hosted in an S3 bucket and distributed at high speed via Amazon CloudFront. For the PDF document submission feature, the system must use the mechanism of generating Presigned URLs from EC2 and route the upload flow through a VPC Endpoint to optimize internal network bandwidth, avoiding reliance on the public Internet.
+
+### 5. Timeline & Milestones
+
+- _Pre-Internship (Month 0)_: 1 month for planning and evaluating the old station.
+- _Internship (Months 4–7)_:
+  - Month 4: Focus on learning fundamental knowledge of cloud computing platforms.
+  - Month 5: Transition to advanced modules on AWS infrastructure systems.
+  - Month 6: Continue the learning process while brainstorming system architecture and beginning the implementation of several core features.
+  - Month 7: Continue implementation, finalize remaining features, and conduct comprehensive system testing.
 
 ### 6. Budget Estimation
-*Estimated Monthly Infrastructure Cost (For Testing / Academic Scale)*
-- *Amazon RDS MySQL (db.t3.micro)*: ~$15.00/month (Covered under AWS Free Tier).
-- *Amazon S3 (Media & PDF Storage - ~5-10 GB)*: ~$0.15 – $0.25/month.
-- *AWS IAM*: Completely Free.
 
-*Total Infrastructure Cost*: ~$15.25/month (Can be reduced to **$0.00/month** by utilizing AWS 12-Month Free Tier allocations).
+_Infrastructure Costs_
+
+- Amazon EC2: $20.81/month (02 EC2 t3.micro, Linux, 730 hours).
+- Amazon EBS gp3: $0.00/month (02 gp3 volumes, 8 GB/volume, no Snapshot).
+- Application Load Balancer: $18.50/month (01 ALB, 2 new connections/second, 5 requests/second).
+- Public IPv4: $7.30/month (02 Public IPv4 addresses).
+- Amazon RDS MySQL: $38.00/month (db.t3.micro, Multi-AZ, On-Demand).
+- Amazon RDS Storage: $5.50/month (20 GB General Purpose SSD gp3).
+- Amazon S3 Standard: $0.25/month (10 GB storage, 5,000 PUT, 10,000 GET requests).
+- Amazon CloudFront: $0.00/month (10 GB data transfer, 100,000 HTTPS requests).
+- AWS WAF: $8.00/month (01 Web ACL, 03 Rules, 100,000 requests).
+- AWS Secrets Manager: $0.40/month (01 Secret).
+- Amazon CloudWatch: $0.00/month (05 Alarms, low usage Metrics and Logs).
+- Amazon SNS: $0.00/month (100 email notifications).
+- Amazon S3 Gateway Endpoint: $0.00/month (01 Gateway Endpoint).
+- IAM Role, Security Group, Amazon VPC, Subnet, and Internet Gateway: $0.00/month.
+
+- Total: ~$98.76/month.
 
 ### 7. Risk Assessment
-*Risk Matrix*
-- Database Connection Timeout (RDS): High impact, low probability.
-- S3 Upload Failure due to incorrect IAM Policy: Medium impact, medium probability.
-- Exposure of Database Credentials / Secret Keys: Very high impact, low probability.
 
-*Mitigation Strategies*
-- RDS Timeout: Configure RDS Security Groups properly to allow inbound traffic on port 3306 from the backend application server.
-- S3 / IAM Errors: Precisely define allowed actions (`s3:PutObject`, `s3:GetObject`) in IAM Policies and assign IAM Roles directly instead of hardcoding access keys.
-- Credential Security: Use environment variables (`.env`) to safely isolate RDS connection strings and S3 configurations.
+_Risk Matrix_
+
+- Database connection failure: High impact, low probability.
+- Credential leakage error: Severe impact, low probability.
+- Traffic bottleneck: Medium impact, low probability.
+
+_Mitigation Strategies_
+
+- Database: Apply the Standby architecture of Multi-AZ RDS for failover readiness.
+- Security: Centralize storage in AWS Secrets Manager combined with the principle of least privilege via IAM Roles for EC2 instances.
+- Traffic: Automatically scale load using Auto Scaling Group and Application Load Balancer.
+
+_Contingency Plans_
+
+- Set up an automated CloudWatch alert system via SNS to send emails to administrators for timely intervention when anomalies are detected.
 
 ### 8. Expected Outcomes
-*Technical Enhancements*: Successfully built an internship management web application seamlessly integrated with core AWS Cloud services (S3, RDS, IAM).
-*Practical Value*: Enabled team members to master practical AWS cloud services, improved 4-member group project management workflows (Git Flow, Figma, RESTful APIs), and delivered a complete project ready for academic evaluation.
+
+_Technical Improvements_: The system operates smoothly with high availability, strict multi-layered security, and complete automation of resource monitoring and static file storage flows.
+
+_Long-term Value_: Successfully build a professional management platform for the internship program, enhance teamwork efficiency, and create favorable conditions for students to effectively apply specialized cloud computing knowledge in practice.
